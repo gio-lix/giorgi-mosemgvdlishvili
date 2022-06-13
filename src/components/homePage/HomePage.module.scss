@@ -2,7 +2,6 @@
 @import "src/styles/mixin";
 
 
-
 .title {
   font-family: $font-Raleway;
   font-style: normal;
@@ -29,16 +28,18 @@
 
   &_img_box {
     position: relative;
-    Width:354px;
-    Height:330px;
+    width: 354px;
+    height: 330px;
     margin-top: 16px;
     @include flexJustify(row, center);
+
     .imgProperty {
       width: auto;
       max-width: 354px;
       height: 100%;
       max-height: 330px;
     }
+
     .outOfStockTitle {
       position: absolute;
       left: 50%;
@@ -53,6 +54,7 @@
       color: $font-color-outStock;
     }
   }
+
   &_title_box {
     @include flexJustify(column, start);
     max-width: 100%;
@@ -60,6 +62,7 @@
     box-sizing: border-box;
     padding: 24px 16px;
     margin-right: auto;
+
     .brand {
       font-family: $font-Raleway;
       font-style: normal;
@@ -70,6 +73,7 @@
       word-wrap: break-word;
       cursor: pointer;
     }
+
     .price {
       font-family: $font-Raleway;
       font-style: normal;
@@ -78,6 +82,7 @@
       line-height: 28.8px;
       color: $font-color-gray;
     }
+
     .shop {
       position: absolute;
       visibility: hidden;
@@ -86,11 +91,13 @@
       right: 31px;
     }
   }
+
   &:hover {
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+
     .shop {
-        visibility: visible;
-      }
+      visibility: visible;
+    }
   }
 }
 

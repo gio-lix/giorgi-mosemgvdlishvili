@@ -42,6 +42,7 @@
     line-height: 18px;
     color: $font-color-gray;
   }
+
   &_button {
     display: block;
     width: 292px;
@@ -87,8 +88,9 @@
   width: 32px;
   height: 32px;
 }
+
 .marginColor:not(:last-child) {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 

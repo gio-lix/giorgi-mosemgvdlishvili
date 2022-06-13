@@ -3,6 +3,7 @@
 
 .rightBox {
   display: flex;
+
   & span {
     cursor: pointer;
     @include flexAlign(row, center);
@@ -27,11 +28,12 @@
 
         &:not(:last-child) {
           margin-bottom: 13px;
-
         }
+
         > span {
           width: 100%;
           @include flexJustify(row, center);
+
           > p {
             font-family: $font-Raleway;
             font-style: normal;
@@ -49,15 +51,17 @@
     .shopIcon {
       position: relative;
       margin-left: 24px;
+
       > span {
         @include flex(row, center, center);
         position: absolute;
+        top: -12px;
+        right: -10px;
         width: 20px;
         height: 20px;
         border-radius: 50%;
         background-color: black;
-        top: -12px;
-        right: -10px;
+
         > p {
           font-family: $font-Raleway;
           font-weight: $font-bold;
@@ -70,9 +74,9 @@
     > div {
       &.activeHover {
         position: absolute;
-        z-index: 1;
-        top: 78px;
         left: 0;
+        top: 78px;
+        z-index: 1;
         width: 1440px;
         height: calc(100% - 78px);
         background: rgba(57, 55, 72, 0.22);
@@ -82,18 +86,18 @@
         @include flexJustify(column, space-between);
         position: absolute;
         z-index: 2;
-        width: 325px;
-        height: 677px;
         left: 1043px;
         top: 78px;
+        width: 325px;
+        height: 677px;
         padding: 32px 16px;
         background-color: $white;
 
-
         > div:nth-child(2) {
+          @include flex(row, space-between, center);
           height: auto;
           width: 100%;
-          @include flex(row, space-between, center);
+
           .buttonBag {
             font-family: $font-Raleway;
             font-weight: $font-semibold;
@@ -107,7 +111,7 @@
             height: 43px;
           }
 
-         .buttonCheckout {
+          .buttonCheckout {
             background: $backgroundGreen;
             font-size: $font-sm;
             color: $white;
@@ -118,6 +122,10 @@
       }
     }
   }
+}
+
+.cursorNone {
+  cursor: default!important;
 }
 
 

@@ -22,6 +22,7 @@ interface Props extends RouteComponentProps {
 }
 
 class RightMenu extends Component<Props> {
+    orderAddress = this.props.location.pathname === "/order";
     state = {
         openShoppingCart: false,
         openCurrencyCart: false,
@@ -37,7 +38,7 @@ class RightMenu extends Component<Props> {
     }
 
     onHandleOpenCart() {
-        if (this.props.location.pathname === "/order") return
+        if (this.orderAddress) return
         this.setState({openShoppingCart: !this.state.openShoppingCart})
         this.lockScroll()
 
@@ -46,7 +47,6 @@ class RightMenu extends Component<Props> {
     handleCloseCart() {
         this.setState({openShoppingCart: false})
         this.unlockScroll()
-
     }
 
     onHandleOpenCurrencyCart() {
@@ -54,9 +54,11 @@ class RightMenu extends Component<Props> {
         this.state.openShoppingCart = false
         this.setState({openCurrencyCart: !this.state.openCurrencyCart})
     }
+
     componentDidMount() {
         window.addEventListener("click", this.handleClick)
     }
+
     redirectOrderPage = () => {
         this.props.history.push("/order")
         this.unlockScroll()
@@ -66,11 +68,12 @@ class RightMenu extends Component<Props> {
     componentWillUnmount() {
         window.removeEventListener("click", this.handleClick)
     }
+
     handleClick = (e: any) => {
         if (!e.path.includes(this.myCurrentRef.current)) {
             this.setState({openCurrencyCart: false})
         }
-        if (e.target.classList.contains("linkTag")){
+        if (e.target.classList.contains("linkTag")) {
             this.handleCloseCart()
         }
     }
@@ -80,13 +83,13 @@ class RightMenu extends Component<Props> {
     }
 
 
-
-
     render() {
         const {currencies} = this.props.currencies
         return (
             <div className={s.rightBox}>
-                <div ref={this.myCurrentRef} onClick={() => {this.onHandleOpenCurrencyCart()}}>
+                <div ref={this.myCurrentRef} onClick={() => {
+                    this.onHandleOpenCurrencyCart()
+                }}>
                     <span>
                         <img src={IMAGES.dollar} alt="dollar"/>
                         <img src={IMAGES.arrow}
@@ -110,10 +113,13 @@ class RightMenu extends Component<Props> {
                     ) : null}
                 </div>
                 <div>
-                    <span className={s.shopIcon} onClick={() => {this.onHandleOpenCart()}}>
+                    <span
+                        className={clsx(s.shopIcon, this.orderAddress && s.cursorNone)}
+                        onClick={() => {this.onHandleOpenCart()}}
+                    >
                         <img src={IMAGES.shop} alt="shop"/>
                         {OrderItems(this.props.orders.orders) > 0 ? (
-                            <span>
+                            <span className={clsx(this.orderAddress && s.cursorNone)}>
                                 <p>{OrderItems(this.props.orders.orders)}</p>
                             </span>
                         ) : null}
@@ -125,9 +131,9 @@ class RightMenu extends Component<Props> {
                                  onClick={() => {
                                      this.handleCloseCart()
                                  }}
-                            > </div>
+                            ></div>
                             <div className={s.openCart}>
-                                <OrderInfoSizes />
+                                <OrderInfoSizes/>
                                 <div>
                                     <Button
                                         className={s.buttonBag}
