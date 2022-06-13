@@ -25,54 +25,45 @@ export const GET_PRODUCTS_BY_NAME = gql`
               name
               gallery
               brand
-              attributes {
-                id
-                name
-                type
-                items {
-                  displayValue
-                  value
-                  id
-                }
-              }
+              inStock
               prices {
+                amount
                 currency {
                   symbol
                   label
                 }
-                amount
               }
-              inStock
             }
           }
         }
     `
 
-export const GET_PRODUCTS_BY_ID = gql`
+export const GET_PRODUCT_BY_ID = gql`
         query Query($productId: String!) {
            product(id: $productId) {
+             id
              name
              inStock
              gallery
-             id
              description
+             category
+             brand
+             attributes {
+               id
+               name
+               type
+               items {
+                 displayValue
+                 value
+                 id
+               }
+             }
              prices {
                 amount
                 currency {
                   symbol
                   label
                 }
-             }
-             brand
-             attributes {
-               name
-               type
-               id
-               items {
-                 displayValue
-                 value
-                 id
-               }
              }
            }
         }

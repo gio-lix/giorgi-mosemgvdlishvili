@@ -1,10 +1,50 @@
 @import "reset";
 @import "variables";
+@import "mixin";
 
 
 body {
   margin: 0 auto;
+  padding: 0;
   width: 1440px;
   min-height: 1513px;
-  border: 1px solid black;
+  position: relative;
+
 }
+.container {
+  width: auto;
+  padding: 0 101px;
+}
+.ProductIdGrid {
+  display: grid;
+  grid-template-columns: 79px 610px 1fr;
+  margin-top: 80px;
+}
+.inherit {
+  all: initial;
+  * {
+    all: revert;
+  }
+
+}
+
+.setColor {
+  margin-bottom: 24px;
+  margin-right: 10px;
+  > span {
+    width: 32px;
+    height: 32px;
+  }
+}
+.orderTitle {
+  font-family: $font-Raleway;
+  font-weight: $font-bold;
+  color: $font-color-gray;
+  font-size: 32px;
+  line-height: 40px;
+  font-style: normal;
+  margin: 80px 0 55px 0;
+  text-transform: uppercase;
+}
+
+

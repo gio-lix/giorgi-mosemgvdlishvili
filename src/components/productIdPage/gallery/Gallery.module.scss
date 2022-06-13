@@ -1,0 +1,39 @@
+@import "src/styles/variables";
+
+.imagesBox {
+  width: 79px;
+  height: auto;
+  margin-bottom: 32.39px;
+  cursor: pointer;
+}
+.image {
+  margin-left: 14.58px + 25.42px;
+  height: auto;
+  .imageBox {
+    position: relative;
+    height: auto;
+    width: auto;
+    .mainImg {
+      width: 100%;
+      height: auto;
+    }
+    .outOfStock {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: $font-Raleway;
+      font-style: normal;
+      font-weight: $font-regular;
+      font-size: $font-xlg;
+      line-height: 160%;
+      color: $font-color-outStock;
+    }
+  }
+}
+
+
+.opacity {
+  background: #FFFFFF;
+  opacity: 0.5;
+}

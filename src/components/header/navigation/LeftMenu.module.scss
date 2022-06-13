@@ -1,0 +1,27 @@
+@import "src/styles/variables";
+@import "src/styles/mixin";
+
+.nav {
+  @include flexAlign(row, center);
+  height: 100%;
+  padding: 0 16px;
+  &.active {
+    border-bottom: $font-color-green 2px solid;
+   > a {
+     color: $font-color-green;
+     font-weight: $font-semibold;
+   }
+  }
+  > a {
+    font-family: $font-Raleway;
+    font-weight: $font-regular;
+    color: $font-color-gray;
+    font-size: $font-med;
+    font-style: normal;
+    line-height: 120%;
+
+  }
+}
+
+
+

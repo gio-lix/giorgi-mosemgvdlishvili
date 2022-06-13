@@ -1,0 +1,22 @@
+@import "../../../styles/variables";
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid black;
+  outline: none;
+  line-height: 18px;
+
+
+  font-family: $font-Source;
+  font-weight: $font-regular;
+  color: $font-color-gray;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+
+}

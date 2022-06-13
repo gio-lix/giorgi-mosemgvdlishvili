@@ -1,16 +1,19 @@
-import {ActionType, DataType, PRODUCT_TYPES} from "../types";
+import {ActionType, PRODUCT_TYPES, ProductType} from "../types";
 import {actionProducts} from "../action-creators";
+
+
 
 const initialState = {
     loading: false,
-    category: null as DataType | null,
+    products: [] as ProductType[] ,
+    name: "",
     error: ''
 }
 
-type StateType = typeof initialState
+export type ProductState = typeof initialState
 export type Action = ActionType<typeof actionProducts>
 
-export const ProductsReducers = (state: StateType = initialState, action: Action) => {
+export const productsReducers = (state: ProductState = initialState, action: Action) => {
     switch (action.type) {
         case PRODUCT_TYPES.PRODUCT_FETCH_REQUEST:
             return {
@@ -20,7 +23,8 @@ export const ProductsReducers = (state: StateType = initialState, action: Action
         case PRODUCT_TYPES.PRODUCT_FETCH_SUCCESS:
             return {
                 ...state,
-                category: action.payload.category,
+                products: action.payload.products,
+                name: action.payload.name,
                 loading: false
             }
         case PRODUCT_TYPES.PRODUCT_FETCH_ERROR:

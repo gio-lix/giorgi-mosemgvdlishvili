@@ -1,0 +1,98 @@
+@import "src/styles/variables";
+
+.info {
+  height: auto;
+  margin-left: 100px;
+
+  &_brand {
+    font-family: $font-Raleway;
+    font-weight: $font-semibold;
+    color: $font-color-gray;
+    font-size: $font-xxlg;
+    font-style: normal;
+    line-height: 27px;
+    margin-bottom: 16px;
+  }
+
+  &_name {
+    font-family: $font-Raleway;
+    font-weight: $font-regular;
+    color: $font-color-gray;
+    font-size: $font-xxlg;
+    font-style: normal;
+    line-height: 27px;
+    margin-bottom: 43px;
+  }
+
+  &_size {
+    font-family: $font-Roboto;
+    font-weight: 700;
+    font-size: $font-lg;
+    text-transform: uppercase;
+    font-style: normal;
+    line-height: 18px;
+    margin: 24px 0 10px 0;
+  }
+
+  &_price {
+    font-family: $font-Raleway;
+    font-weight: $font-bold;
+    font-size: $font-xlg;
+    font-style: normal;
+    line-height: 18px;
+    color: $font-color-gray;
+  }
+  &_button {
+    display: block;
+    width: 292px;
+    height: 52px;
+    background: $font-color-green;
+    padding: 16px 32px;
+    margin: 20px 0 40px 0;
+    cursor: pointer;
+
+    font-family: $font-Raleway;
+    font-weight: $font-semibold;
+    font-size: $font-med;
+    color: $white;
+    line-height: 120%;
+    font-style: normal;
+  }
+}
+
+//send select box styles
+.setSelectValues {
+  min-width: 63px;
+  height: 45px;
+  margin-bottom: 24px;
+  line-height: 18px;
+  font-size: $font-med;
+}
+
+
+// send check box styles
+.setCheckBoxSizes {
+  width: 63px;
+  height: 45px;
+  margin-bottom: 24px;
+  font-weight: $font-regular;
+  font-size: $font-med;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  color: $font-color-gray;
+}
+
+// send colorbox styles
+.setColorBoxSizes {
+  width: 32px;
+  height: 32px;
+}
+.marginColor:not(:last-child) {
+    margin-right: 8px;
+}
+
+
+
+
+
+

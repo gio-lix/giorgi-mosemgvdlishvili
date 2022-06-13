@@ -1,0 +1,171 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixin";
+
+.frame {
+  position: relative;
+  width: 100%;
+  height: 538px;
+  background-color: $backgroundWhite;
+  > .boxInfo {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 26px;
+        > h3 {
+          font-family: $font-Raleway;
+          font-weight: $font-bold;
+          font-size: $font-med;
+          color: $font-color-gray;
+          line-height: 25.6px;
+          font-style: normal;
+        }
+
+        > p {
+          font-family: $font-Raleway;
+          $font-medium: $font-bold;
+          color: $font-color-gray;
+          font-size: $font-med;
+          line-height: 25.6px;
+          font-style: normal;
+          margin-left: 8px;
+        }
+  }
+  .box {
+    overflow-y: auto;
+    width: auto;
+    height: calc(100% - 26px);
+    margin-top: 26px;
+    padding-bottom: 62px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &_totalPriceBox {
+    position: absolute;
+    bottom: 0;
+    z-index: 30;
+    @include flex(row, space-between, center);
+    background-color: white;
+    width: 100%;
+    height: 28px;
+    > h3 {
+      font-family: $font-Raleway;
+      font-weight: $font-medium;
+      color: $font-color-gray;
+      font-size: $font-sm;
+      line-height: 18px;
+      font-style: normal;
+    }
+    > p {
+      font-family: $font-Raleway;
+      font-weight: $font-bold;
+      font-size: $font-med;
+      color: $font-color-gray;
+      line-height: 160%;
+      font-style: normal;
+    }
+  }
+}
+
+.order {
+  display: flex;
+  &:first-child {
+    margin-top: 58px;
+  }
+  &:not(:first-child) {
+    margin-top: 42px;
+  }
+  &_box {
+    width: 136px;
+    height: auto;
+    &_title {
+      font-family: $font-Raleway;
+      font-weight: $font-light;
+      font-size: $font-med;
+      color: $font-color-gray;
+      font-style: normal;
+      line-height: 160%;
+    }
+    &_price {
+      font-family: $font-Raleway;
+      font-weight: $font-medium;
+      color: $font-color-gray;
+      font-size: $font-med;
+      font-style: normal;
+      line-height: 160%;
+    }
+    &_color_box {
+      @include flexAlign(column,flex-start);
+      .title {
+        font-family: $font-Raleway;
+        font-weight: $font-regular;
+        color: $font-color-gray;
+        font-size: $font-sm;
+        font-style: normal;
+        line-height: 16px;
+        margin: 8px 0;
+      }
+    }
+  }
+  > div:last-child {
+    flex-grow: 1;
+  }
+}
+.inputTitle {
+  font-family: $font-Raleway;
+  font-weight: $font-regular;
+  color: $font-color-gray;
+  font-size: $font-sm;
+  line-height: 16px;
+  font-style: normal;
+  margin: 8px 0;
+
+}
+
+
+
+
+
+.selectTitle {
+  font-family: $font-Raleway;
+  font-weight: $font-regular;
+  font-size: $font-sm;
+  color: $font-color-gray;
+  line-height: 16px;
+  font-style: normal;
+  margin: 8px 0;
+
+}
+
+
+
+.setSelectValues {
+  min-width: 24px;
+  min-height: 14px;
+  font-size: $font-med;
+}
+
+
+
+// send check box styles
+.setCheckBoxSizes {
+  width: 24px;
+  height: 24px;
+  font-weight: $font-regular;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  color: $font-color-gray;
+}
+
+
+// colorbox styles
+.setColorSize {
+  width: 16px;
+  height: 16px;
+}
+.marginColor:not(:last-child) {
+  margin-right: 8px;
+
+}

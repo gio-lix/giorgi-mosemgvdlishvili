@@ -6,7 +6,7 @@ import {actionsCategories} from "../action-creators";
 
 function* getCategories() {
     try {
-        const data: CategoriesType = yield call(fetchCategories)
+        const data: CategoriesType[] = yield call(fetchCategories)
         yield put(actionsCategories.fetchCategoriesSuccess(data))
     } catch (err ) {
         yield put(actionsCategories.fetchCategoriesError((err as ErrorType).response?.errors[0].message))

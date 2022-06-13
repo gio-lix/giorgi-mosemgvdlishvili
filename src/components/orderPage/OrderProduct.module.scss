@@ -1,0 +1,222 @@
+@import "src/styles/variables";
+@import "src/styles/mixin";
+
+
+
+.sectionBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  border-top: 1px solid #E5E5E5;
+  padding: 24px 0 0 0;
+  &:hover {
+    .deleteButton {
+      visibility: visible;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #E5E5E5;
+  }
+  .sizeBox {
+    width: 50%;
+    height: auto;
+    > h2 {
+      font-family: $font-Raleway;
+      font-weight: $font-semibold;
+      font-size: $font-xxlg;
+      color: $font-color-gray;
+      font-style: normal;
+      line-height: 27px;
+      margin-bottom: 16px;
+    }
+    > h4 {
+      font-family:  $font-Raleway;
+      font-weight: $font-regular;
+      color: $font-color-gray;
+      font-size: $font-xxlg;
+      line-height: 27px;
+      font-style: normal;
+      margin-bottom: 20px;
+    }
+    > h5 {
+      font-family: $font-Raleway;
+      font-weight: $font-bold;
+      font-size: $font-xlg;
+      color: $font-color-gray;
+      font-style: normal;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    &_title {
+      font-family: $font-Roboto;
+      font-weight: $font-bold;
+      font-size: $font-lg;
+      color: $font-color-gray;
+      font-style: normal;
+      line-height: 18px;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+  }
+  .imageBox {
+    width: 50%;
+    height: auto;
+    margin-bottom: 24px;
+    > div {
+      @include flexJustify(row,flex-end);
+      height: auto;
+      width: auto;
+      .buttonBox {
+        @include flexJustify(column,space-between);
+        height: 288px;
+        margin-right: 24px;
+        > span {
+          @include flexJustify(row,center);
+          font-weight: $font-medium;
+          font-family: $font-Raleway;
+          font-size: $font-xlg;
+          color: $font-color-gray;
+          font-style: normal;
+          line-height: 160%;
+        }
+        > button {
+          width: 45px;
+          height: 45px;
+          background-color: white;
+          border: 1px solid #1D1F22;
+          cursor: pointer;
+          > img {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+
+      .carouselImgBox {
+        width: 200px;
+        height: auto;
+        > span {
+          position: relative;
+          > img {
+            width: 200px;
+            height: auto;
+          }
+          .carousel {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            > button {
+              cursor: pointer;
+              border: none;
+              background: none;
+            }
+            > button:first-child {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.orderInfo {
+  margin-top: 32px;
+  > span {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-family: $font-Raleway;
+    color: $font-color-gray;
+    font-size: $font-xlg;
+    line-height: 28px;
+    font-style: normal;
+
+  }
+  > span:nth-child(1) {
+      > h3 {
+        font-weight: $font-regular;
+        > span {
+          font-weight: $font-bold;
+        }
+      }
+      > h3:nth-child(2) {
+        margin: 8px 0;
+      }
+  }
+  > span:nth-child(2) {
+    > h2 {
+      font-weight: $font-medium;
+      > span {
+        font-weight: $font-bold;
+        margin-left: 24px;
+      }
+    }
+  }
+}
+.deleteButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #1D1F22;
+  color: white;
+  visibility: hidden;
+}
+
+.buttonCheckout {
+  background: $backgroundGreen;
+  font-size: $font-sm;
+  color: $white;
+  width: 279px;
+  height: 43px;
+  margin: 20px 0 274px 0;
+}
+
+.disabled {
+  cursor: default!important;
+}
+.marginColorBox {
+  margin-bottom: 16px;
+}
+.disabled {
+  cursor: default;
+}
+
+.setCheckBoxSizes {
+  width: 63px;
+  height: 45px;
+  font-weight: $font-regular;
+  font-size: $font-med;
+  color: $font-color-gray;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+// colorbox styles
+.setColorSize {
+  width: 32px;
+  height: 32px;
+
+}
+.marginColor:not(:last-child) {
+  margin-right: 8px;
+}
+
+//send select box styles
+.setSelectValues {
+  min-width: 63px;
+  height: 45px;
+  margin-bottom: 24px;
+  line-height: 18px;
+  font-size: $font-med;
+}

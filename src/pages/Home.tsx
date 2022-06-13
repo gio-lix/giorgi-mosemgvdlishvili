@@ -2,34 +2,54 @@ import {Component} from "react";
 import {connect} from "react-redux";
 import {actionProducts} from "../redux/action-creators";
 import {RootState} from "../redux/store";
-import {DataType} from "../redux/types";
-import {Layout} from "../components/Layout";
+import Layout from "../components/Layout";
+import {ProductState} from "../redux/reducers";
+import HomePage from "../components/homePage";
 
-interface HomeType {
+
+interface HomeProps {
     term: string
-    products: DataType,
+    products: ProductState
     dispatchRequest: (item: string) => void
 }
 
 
-class Home extends Component<HomeType> {
+class Home extends Component<HomeProps> {
+    componentDidMount() {
+        this.props.dispatchRequest(this.props.term)
+    }
+
+    componentDidUpdate(prevProps: HomeProps, prevState: any ): void {
+        if (prevProps.term !== this.props.term) {
+            this.props.dispatchRequest(this.props.term)
+        }
+    }
     render() {
+        const {name,products,error,loading} = this.props.products
         return (
             <Layout>
-                <button onClick={() => {
-                    console.log(this.props.dispatchRequest("all"))
-                }}>
-                    fetch data
-                </button>
-                <h1>Hello there</h1>
+                {!loading ? (
+                        <HomePage
+                            name={name}
+                            products={products}
+                        />
+                ) : null}
+                {error ? (
+                    <div>
+                        error
+                    </div>
+                ) : null}
             </Layout>
         )
     }
 }
 
-const mapState = (state: RootState) => ({products: state.products})
+const mapState = (state: RootState) => ({
+    products: state.products,
+    categories: state.categories
+})
 
 export default connect(mapState,
     {
-        dispatchRequest: (item: string) => actionProducts.fetchProductsRequest(item)
+        dispatchRequest: (item: string) => actionProducts.fetchProductsRequest(item),
     })(Home);

@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+.button  {
+  font-family: $font-Raleway;
+  font-weight: $font-semibold;
+  line-height: 120%;
+  font-style: normal;
+  white-space: nowrap;
+  cursor: pointer;
+
+}
+.disable {
+  opacity: 70%;
+  cursor: default;
+}

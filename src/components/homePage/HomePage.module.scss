@@ -1,0 +1,101 @@
+@import "src/styles/variables";
+@import "src/styles/mixin";
+
+
+
+.title {
+  font-family: $font-Raleway;
+  font-style: normal;
+  font-weight: $font-regular;
+  font-size: 42px;
+  line-height: 160%;
+  margin: 80px 0 110px 0;
+}
+
+.cartBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 40px;
+
+}
+
+.cart {
+  position: relative;
+  @include flexAlign(column, center);
+  width: 386px;
+  min-height: 444px;
+  margin-bottom: 103px;
+  background-color: $white;
+
+  &_img_box {
+    position: relative;
+    Width:354px;
+    Height:330px;
+    margin-top: 16px;
+    @include flexJustify(row, center);
+    .imgProperty {
+      width: auto;
+      max-width: 354px;
+      height: 100%;
+      max-height: 330px;
+    }
+    .outOfStockTitle {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 50%;
+
+      font-family: $font-Raleway;
+      font-style: normal;
+      font-weight: $font-regular;
+      font-size: $font-xlg;
+      line-height: 160%;
+      color: $font-color-outStock;
+    }
+  }
+  &_title_box {
+    @include flexJustify(column, start);
+    max-width: 100%;
+    min-height: calc(100% - (330px + 16px));
+    box-sizing: border-box;
+    padding: 24px 16px;
+    margin-right: auto;
+    .brand {
+      font-family: $font-Raleway;
+      font-style: normal;
+      font-weight: $font-light;
+      font-size: $font-lg;
+      line-height: 28.8px;
+      color: $font-color-gray;
+      word-wrap: break-word;
+      cursor: pointer;
+    }
+    .price {
+      font-family: $font-Raleway;
+      font-style: normal;
+      font-weight: $font-medium;
+      font-size: $font-lg;
+      line-height: 28.8px;
+      color: $font-color-gray;
+    }
+    .shop {
+      position: absolute;
+      visibility: hidden;
+      cursor: pointer;
+      bottom: 72px;
+      right: 31px;
+    }
+  }
+  &:hover {
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    .shop {
+        visibility: visible;
+      }
+  }
+}
+
+
+.outStock {
+  background: $white;
+  opacity: 0.5;
+}

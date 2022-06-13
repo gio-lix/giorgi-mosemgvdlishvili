@@ -2,13 +2,17 @@ import {applyMiddleware, combineReducers, createStore} from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas/sagas";
-import {CategoriesReducer, CurrenciesReducer, ProductsReducers} from "./reducers";
+import {CategoriesReducer, CurrenciesReducer, OrderReducer, productsReducers} from "./reducers";
+import {ProductIdReducer} from "./reducers/productIdReducer";
 
 
-const rootReducer =  combineReducers({
+
+const rootReducer = combineReducers({
     categories: CategoriesReducer,
     currencies: CurrenciesReducer,
-    products: ProductsReducers
+    products: productsReducers,
+    product: ProductIdReducer,
+    orders: OrderReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>
