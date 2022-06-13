@@ -92,10 +92,8 @@ class RightMenu extends Component<Props> {
                 }}>
                     <span>
                         <img src={IMAGES.dollar} alt="dollar"/>
-                        <img src={IMAGES.arrow}
-                             className={clsx(s.arrowImg, this.state.openCurrencyCart ? s.active : null)}
-                             alt="arrow"
-                        />
+                        <img src={IMAGES.arrow} className={clsx(s.arrowImg, this.state.openCurrencyCart ? s.active : null)}
+                             alt="arrow"/>
                     </span>
                     {this.state.openCurrencyCart ? (
                         <div className={s.openCurrency}>
